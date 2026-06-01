@@ -1,0 +1,97 @@
+---
+import '../styles/global.css';
+import data from '../../public/tools.json';
+const title='FreeTier — Bootstrapper\'s Catalog of Free SaaS Tools';const desc='Discover free tiers, generous plans, and cheap alternatives for indie SaaS builders. Hosting, databases, auth, email, analytics, AI, and more.';
+const tools=data.categories;const totalTools=tools.reduce((s,c)=>s+c.items.length,0);
+const colorMap:Record<string,string>={emerald:'border-emerald-500/20 text-emerald-400 bg-emerald-500/10',violet:'border-violet-500/20 text-violet-400 bg-violet-500/10',amber:'border-amber-500/20 text-amber-400 bg-amber-500/10',blue:'border-blue-500/20 text-blue-400 bg-blue-500/10'};
+const categoryColors:Record<string,string>={hosting:'emerald',databases:'violet',auth:'amber','email-communication':'blue',analytics:'emerald','ai-llms':'violet',payments:'emerald',monitoring:'amber',cms:'violet'};
+const repoUrl='https://github.com/jordan-thirkle/freetier-data';
+---
+<!doctype html><html lang="en" class="dark scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content={desc}><meta property="og:title" content={title}><meta property="og:description" content={desc}><meta name="twitter:card" content="summary_large_image"><title>{title}</title><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"FreeTier","url":"https://mvp-freetier.vercel.app","description":"Discover free tiers for indie SaaS builders. Hosting, databases, auth, email, analytics, AI, and more.","applicationCategory":"DeveloperApplication","operatingSystem":"All"}</script><script defer data-domain="freetier.vercel.app" src="https://plausible.io/js/script.js"></script>
+<script type="module">
+const app=document.getElementById('app-root');if(!app)return;
+const cards=Array.from(app.querySelectorAll('[data-tool]'));
+const search=document.getElementById('search-input')as HTMLInputElement|null;
+const sort=document.getElementById('sort-select')as HTMLSelectElement|null;
+const cats=document.querySelectorAll('[data-cat]');
+let activeCat='all';
+function getSortKey(el:Element):string{const n=el.getAttribute('data-name')||'';return n.toLowerCase();}
+function render(){
+  const q=search?.value.toLowerCase()||'';
+  cats.forEach(c=>c.classList.toggle('active',c.getAttribute('data-cat')===activeCat));
+  const groups=new Map<string,Element[]>();
+  cards.forEach(c=>{
+    const name=c.getAttribute('data-name')||'';
+    const desc=c.getAttribute('data-desc')||'';
+    const cat=c.getAttribute('data-category')||'';
+    const matches=q===''||name.toLowerCase().includes(q)||desc.toLowerCase().includes(q);
+    const catMatch=activeCat==='all'||cat===activeCat;
+    const show=matches&&catMatch;
+    c.classList.toggle('hidden',!show);
+    if(show){const g=groups.get(cat)||[];g.push(c);groups.set(cat,g);}
+  });
+  const sections=app.querySelectorAll('[data-section]');
+  sections.forEach(s=>{
+    const id=s.getAttribute('data-section');
+    const items=groups.get(id||'')||[];
+    const isVisible=(q===''&&(activeCat==='all'||activeCat===id))||items.length>0;
+    s.classList.toggle('hidden',!isVisible);
+    if(isVisible){const grid=s.querySelector('[data-grid]');if(grid&&sort){grid.innerHTML='';const sorted=[...items];sorted.sort((a,b)=>getSortKey(a).localeCompare(getSortKey(b)));sorted.forEach(c=>grid.appendChild(c));}}
+  });
+  const count=document.getElementById('result-count');
+  const total=cards.filter(c=>!c.classList.contains('hidden')).length;
+  if(count)count.textContent=`${total} of ${cards.length}`;
+}
+search?.addEventListener('input',render);
+sort?.addEventListener('change',render);
+cats.forEach(c=>c.addEventListener('click',()=>{activeCat=c.getAttribute('data-cat')||'all';render();}));
+render();
+</script></head><body data-theme="dark" class="min-h-screen flex flex-col">
+<main class="flex-grow">
+  <nav class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between"><a href="/" class="flex items-center gap-2"><div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-black font-bold">F</div><span class="text-white font-bold font-display">FreeTier</span></a><div class="flex items-center gap-3 text-xs"><a href={repoUrl} target="_blank" rel="noopener" class="text-zinc-500 hover:text-white transition-colors">Data open-source</a><span class="text-zinc-700">·</span><span class="text-zinc-600">Updated {new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span></div></nav>
+
+  <section class="mx-auto max-w-3xl px-6 pt-12 pb-6 text-center">
+    <h1 class="text-white mb-3">Free tiers for<br/><span class="bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">indie SaaS builders.</span></h1>
+    <p class="text-lg text-zinc-400 max-w-xl mx-auto mb-6">{totalTools} tools across {tools.length} categories. Every entry has a free tier or generous plan. Build your entire SaaS stack without spending a cent.</p>
+    <div id="filter-bar" class="flex flex-wrap items-center justify-center gap-2 mb-6">
+      <button data-cat="all" class="tag border-emerald-700 text-emerald-400 bg-emerald-900/30 active">All</button>
+      {tools.map(c=><button data-cat={c.id} class="tag border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all">{c.name}</button>)}
+    </div>
+    <div class="flex items-center justify-center gap-3 max-w-md mx-auto">
+      <input id="search-input" type="search" placeholder="Search tools..." class="flex-grow bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-colors"/>
+      <select id="sort-select" class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-400 focus:outline-none focus:border-emerald-500/50"><option value="name">A-Z</option></select>
+    </div>
+    <p class="text-xs text-zinc-600 mt-2" id="result-count">{totalTools} of {totalTools}</p>
+  </section>
+
+  <section id="app-root" class="mx-auto max-w-6xl px-6 pb-12 space-y-10">
+    {tools.map(c=>{
+      const dotColors:{[key:string]:string}={hosting:'#34d399',databases:'#818cf8',auth:'#fbbf24','email-communication':'#60a5fa',analytics:'#34d399','ai-llms':'#818cf8',payments:'#34d399',monitoring:'#fbbf24',cms:'#818cf8'};
+      const dotColor=dotColors[c.id]||'#34d399';
+      const items=c.items.map(t=>{
+        const href=t.refUrl||t.url;
+        return <a href={href} target="_blank" rel="nofollow sponsored" data-tool data-name={t.name} data-desc={t.desc} data-category={c.id} class="card"><div class="flex items-start justify-between mb-2"><span class="text-white font-bold flex items-center gap-1.5">{t.name}{t.refUrl?<span class="text-[10px] text-emerald-500/60 font-normal">ref</span>:null}</span><span class={`tag whitespace-nowrap ${colorMap[t.color]||''}`}>{t.free}</span></div><p class="text-sm text-zinc-400 leading-relaxed">{t.desc}</p></a>;
+      });
+      return <div data-section={c.id}><h2 class="text-white mb-4 flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full" style={`background-color:${dotColor}`}></span>{c.name}</h2><div data-grid class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">{items}</div></div>;
+    })}
+  </section>
+
+  <section id="suggest" class="mx-auto max-w-3xl px-6 pb-16 text-center">
+    <div class="card border-zinc-800 bg-zinc-900/40 py-8 px-6">
+      <h3 class="text-white mb-2">Suggest a tool</h3>
+      <p class="text-sm text-zinc-400 mb-4">Know a great free tier we missed? The data is open-source — submit a PR or open an issue on GitHub.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href={`${repoUrl}/issues/new?template=suggest-tool.md`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors">Open an issue</a>
+        <a href={`${repoUrl}/tree/main/tools.json`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 hover:text-white text-sm px-5 py-2.5 rounded-lg transition-colors">Edit tools.json</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 pb-12 text-center"><div class="card border-zinc-800 bg-zinc-900/30 min-h-[100px] flex items-center justify-center"><p class="text-sm text-zinc-600">Ad slot — <a href="https://www.carbonads.net" class="text-zinc-500 hover:text-zinc-300 underline" target="_blank" rel="nofollow">Advertise here</a></p></div></section>
+
+  <footer class="mx-auto max-w-6xl px-6 pb-12 text-center border-t border-zinc-800 pt-8">
+    <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-500 mb-4"><a href="https://thirkle.vercel.app" class="hover:text-white transition-colors">Built by ThirkleBot</a><span>·</span><a href="https://thirkle.vercel.app/thirklebot" class="hover:text-white transition-colors">Agent</a><span>·</span><a href={repoUrl} target="_blank" rel="noopener" class="hover:text-white transition-colors">Data repo</a><span>·</span><a href="https://ko-fi.com/jordanthirkle" target="_blank" rel="nofollow" class="hover:text-amber-400 transition-colors">☕ Support</a><span>·</span>Links are affiliate referrals</div>
+    <p class="text-xs text-zinc-600">FreeTier · Bootstrapper's catalog of free SaaS tools · No data collected · No account required</p>
+  </footer>
+</main>
+</body></html>

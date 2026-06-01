@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap');
+@tailwind base;@tailwind components;@tailwind utilities;
+@layer base{body{@apply bg-[#0a0a0a] text-zinc-300 antialiased;font-family:'Inter',system-ui,sans-serif}h1,h2{font-family:'Outfit',system-ui,sans-serif}h1{@apply text-4xl md:text-6xl font-bold tracking-tight}h2{@apply text-2xl font-bold tracking-tight}}
+@layer components{.card{@apply bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 hover:border-zinc-700 transition-all}.card.hidden{display:none}.tag{@apply text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border}[data-cat].active{border-color:#047857;color:#34d399;background:rgba(6,78,59,0.3)}}
+::selection{@apply bg-emerald-500/30 text-white}

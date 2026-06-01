@@ -1,0 +1,1 @@
+export default{content:['./src/**/*.astro'],darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['Outfit','system-ui','sans-serif']}}},plugins:[]};
