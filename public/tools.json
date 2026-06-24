@@ -10,7 +10,8 @@
                                              "free":  "100GB/mo",
                                              "url":  "https://vercel.com",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Netlify",
@@ -18,7 +19,8 @@
                                              "free":  "100GB/mo",
                                              "url":  "https://netlify.com",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Railway",
@@ -26,7 +28,8 @@
                                              "free":  "$5 credit",
                                              "url":  "https://railway.app",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Render",
@@ -34,21 +37,24 @@
                                              "free":  "750hrs/mo",
                                              "url":  "https://render.com",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Fly.io",
                                              "desc":  "Run full-stack apps close to users. 3 shared VMs free. Pay-as-you-go after.",
                                              "free":  "3 VMs",
                                              "url":  "https://fly.io",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Cloudflare Pages",
                                              "desc":  "Unlimited bandwidth for static sites. Workers free tier with 100k requests/day.",
                                              "free":  "Unlimited",
                                              "url":  "https://pages.cloudflare.com",
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -62,7 +68,8 @@
                                              "free":  "500MB",
                                              "url":  "https://supabase.com",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "PlanetScale",
@@ -70,7 +77,8 @@
                                              "free":  "Paid only",
                                              "url":  "https://planetscale.com",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Neon",
@@ -78,21 +86,24 @@
                                              "free":  "0.5GB",
                                              "url":  "https://neon.tech",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Turso",
                                              "desc":  "SQLite on the edge. 500 databases, 9GB storage, 1B row reads. Ultra-low latency.",
                                              "free":  "9GB",
                                              "url":  "https://turso.tech",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "MongoDB Atlas",
                                              "desc":  "512MB shared cluster. Perfect for prototyping and small apps.",
                                              "free":  "512MB",
                                              "url":  "https://mongodb.com/atlas",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -106,21 +117,24 @@
                                              "free":  "10K MAU",
                                              "url":  "https://clerk.com",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Lucia Auth",
                                              "desc":  "Open-source auth library. Self-hosted. No limits. Works with any database.",
                                              "free":  "Unlimited",
                                              "url":  "https://lucia-auth.com",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Better Auth",
                                              "desc":  "Open-source auth for TypeScript. Self-hosted. Framework-agnostic.",
                                              "free":  "Unlimited",
                                              "url":  "https://better-auth.com",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Auth0",
@@ -128,7 +142,8 @@
                                              "free":  "25K MAU",
                                              "url":  "https://auth0.com",
                                              "refUrl":  null,
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -142,14 +157,16 @@
                                              "free":  "100/day",
                                              "url":  "https://resend.com",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "SendGrid",
                                              "desc":  "100 emails/day free via Twilio. SMTP and API delivery.",
                                              "free":  "100/day",
                                              "url":  "https://sendgrid.com",
-                                             "color":  "blue"
+                                             "color":  "blue",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Loops",
@@ -157,7 +174,8 @@
                                              "free":  "1K contacts",
                                              "url":  "https://loops.so",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Brevo",
@@ -165,7 +183,8 @@
                                              "free":  "300/day",
                                              "url":  "https://brevo.com",
                                              "refUrl":  null,
-                                             "color":  "blue"
+                                             "color":  "blue",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -178,14 +197,16 @@
                                              "desc":  "Privacy-first analytics. Self-hosted option is completely free. No cookies.",
                                              "free":  "Self-host free",
                                              "url":  "https://plausible.io",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Umami",
                                              "desc":  "Open-source Google Analytics alternative. Self-host for free. Clean dashboard.",
                                              "free":  "Self-host free",
                                              "url":  "https://umami.is",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "PostHog",
@@ -193,14 +214,16 @@
                                              "free":  "1M events",
                                              "url":  "https://posthog.com",
                                              "refUrl":  null,
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Tinybird",
                                              "desc":  "Real-time analytics API. 1,000 API reqs/day, 10GB processed data.",
                                              "free":  "1K reqs/day",
                                              "url":  "https://tinybird.co",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -213,35 +236,40 @@
                                              "desc":  "Free LLM API. Ultra-fast inference for open models. No rate limits on free tier.",
                                              "free":  "Free API",
                                              "url":  "https://groq.com",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Google AI Studio",
                                              "desc":  "Gemini 2.5 Flash free tier. 1,500 requests/day. 1M token context.",
                                              "free":  "1500/day",
                                              "url":  "https://aistudio.google.com",
-                                             "color":  "blue"
+                                             "color":  "blue",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Together AI",
                                              "desc":  "$5 free credit. Run open-source models: Llama, Mistral, DeepSeek.",
                                              "free":  "$5 credit",
                                              "url":  "https://together.ai",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "DeepSeek API",
                                              "desc":  "Cheapest paid API. V3 at $0.27/1M input tokens. No free tier but costs pennies.",
                                              "free":  "Pay-as-you-go",
                                              "url":  "https://platform.deepseek.com",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "OpenAI API",
                                              "desc":  "Free credits on signup. GPT-4.1 Nano at $0.10/1M tokens. Pay-as-you-go.",
                                              "free":  "Free credits",
                                              "url":  "https://platform.openai.com",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -255,7 +283,8 @@
                                              "free":  "No monthly fee",
                                              "url":  "https://stripe.com",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Lemon Squeezy",
@@ -263,14 +292,16 @@
                                              "free":  "No monthly fee",
                                              "url":  "https://lemonsqueezy.com",
                                              "refUrl":  null,
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Paddle",
                                              "desc":  "MoR for SaaS. 5% + 50Â¢. Handles global tax compliance. B2B focused.",
                                              "free":  "No monthly fee",
                                              "url":  "https://paddle.com",
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -284,21 +315,24 @@
                                              "free":  "5K errors",
                                              "url":  "https://sentry.io",
                                              "refUrl":  null,
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Better Stack",
                                              "desc":  "Uptime monitoring with 3-min checks. Status pages. 10 monitors, 30-day logs.",
                                              "free":  "10 monitors",
                                              "url":  "https://betterstack.com",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Grafana Cloud",
                                              "desc":  "10K metrics, 50GB logs, 50GB traces. Full observability stack.",
                                              "free":  "10K metrics",
                                              "url":  "https://grafana.com",
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        },
@@ -312,21 +346,24 @@
                                              "free":  "100K reqs",
                                              "url":  "https://sanity.io",
                                              "refUrl":  null,
-                                             "color":  "amber"
+                                             "color":  "amber",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Strapi",
                                              "desc":  "Open-source headless CMS. Self-hosted version is completely free.",
                                              "free":  "Self-host free",
                                              "url":  "https://strapi.io",
-                                             "color":  "emerald"
+                                             "color":  "emerald",
+                                             "lastVerified":  "2026-06-25"
                                          },
                                          {
                                              "name":  "Hygraph",
                                              "desc":  "GraphQL-native headless CMS. 1M API calls, 100GB assets. Content federation.",
                                              "free":  "1M calls",
                                              "url":  "https://hygraph.com",
-                                             "color":  "violet"
+                                             "color":  "violet",
+                                             "lastVerified":  "2026-06-25"
                                          }
                                      ]
                        }
