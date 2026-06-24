@@ -2,10 +2,11 @@
 import '../styles/global.css';
 import data from '../../public/tools.json';
 
-const title = 'FreeTier — The Free SaaS Stack';
-const desc = 'Discover free tiers, generous plans, and cheap alternatives for indie SaaS builders. Hosting, databases, auth, email, analytics, AI, LLMs — 74+ tools across 9 categories.';
 const tools = data.categories;
 const totalTools = tools.reduce((s, c) => s + c.items.length, 0);
+
+const title = 'FreeTier — The Free SaaS Stack';
+const desc = `Discover free tiers, generous plans, and cheap alternatives for indie SaaS builders. Hosting, databases, auth, email, analytics, AI, LLMs — ${totalTools} tools across ${tools.length} categories.`;
 const colorMap: Record<string, string> = {
   emerald: 'border-accent-secondary/20 text-accent-secondary bg-accent-secondary/10',
   violet: 'border-accent-primary/20 text-accent-primary bg-accent-primary/10',
@@ -35,7 +36,7 @@ const repoUrl = 'https://github.com/jordan-thirkle/freetier-data';
   <meta name="twitter:card" content="summary_large_image" />
   <title>{title}</title>
   <script type="application/ld+json" is:inline>
-    {"@context":"https://schema.org","@type":"WebApplication","name":"FreeTier","url":"https://freetier.byjtt.com","description":"Discover free tiers for indie SaaS builders. 74+ tools across 9 categories.","applicationCategory":"DeveloperApplication","operatingSystem":"All"}
+    {JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"FreeTier","url":"https://freetier.byjtt.com","description":`${totalTools} tools across ${tools.length} categories.`,"applicationCategory":"DeveloperApplication","operatingSystem":"All"})}
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236366f1'/><text x='16' y='22' text-anchor='middle' font-size='18' font-weight='bold' fill='white'>FT</text></svg>" />
 </head>
@@ -64,7 +65,7 @@ const repoUrl = 'https://github.com/jordan-thirkle/freetier-data';
         The <span class="bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent">Free Stack</span>
       </h1>
       <p class="text-lg text-tertiary max-w-xl mx-auto mb-8 leading-relaxed">
-        Build your entire SaaS without spending a cent. {totalTools} tools across {tools.length} categories, each with a verified free tier.
+        Build your entire SaaS on free tiers — or as close as possible. {totalTools} tools across {tools.length} categories.
       </p>
 
       <!-- Filters -->
