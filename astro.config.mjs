@@ -1,1 +1,1 @@
-import{defineConfig}from'astro/config';import tailwind from'@astrojs/tailwind';export default defineConfig({integrations:[tailwind()]});
+import{defineConfig}from'astro/config';import tailwind from'@astrojs/tailwind';export default defineConfig({site:'https://freetier.byjtt.com',integrations:[tailwind()]});
